@@ -7,6 +7,7 @@ window.onload = function() {
 }
 
 var step = function() {
+  ball.move();
   player.render();
   computer.render();
   ball.render();
