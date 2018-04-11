@@ -10,3 +10,10 @@ h1 {
   margin-right: auto;
   display: block;
 }
+
+button {
+  padding-left: 0;
+  padding-right: 0;
+  margin: auto;
+  display: block;
+}

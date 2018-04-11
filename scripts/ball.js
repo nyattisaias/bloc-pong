@@ -1,34 +1,3 @@
-var canvas = document.getElementById('screen');
-var context = canvas.getContext('2d');
-
-function Paddle(xPos, yPos, width, height) {
-  this.xPos = xPos;
-  this.yPos = yPos;
-  this.width = width;
-  this.height = height;
-  this.speed = 25;
-}
-
-Paddle.prototype.render = function() {
-  context.fillStyle = 'black';
-  context.fillRect(this.xPos, this.yPos, this.width, this.height);
-};
-
-Paddle.prototype.move = function() {
-  if (event.keyCode === 38){
-    if (player.yPos !== 0 && player.yPos > 0){
-      this.yPos -= this.speed;
-    }
-  }
-  if (event.keyCode == 40) {
-    if (player.yPos !== (canvas.height - this.height) &&
-        player.yPos < canvas.height - this.height) {
-      this.yPos += this.speed;
-    }
-  }
-  canvas.width = canvas.width; //resets canvas
-};
-
 function Ball(xPos, yPos, radius, startAngle, endAngle) {
   this.xPos = xPos;
   this.yPos = yPos;
@@ -64,9 +33,16 @@ Ball.prototype.move = function() {
   ) {
     this.speedX = -this.speedX;
   }
-  canvas.width = canvas.width; //resets canvas
+  if (this.xPos > computer.xPos + computer.width) {
+    canvas.width = canvas.width; //resets canvas
+    this.xPos = 600;
+    this.yPos = 360;
+  }
+  if (this.xPos < player.xPos - player.width) {
+    canvas.width = canvas.width; //resets canvas
+    this.xPos = 600;
+    this.yPos = 360;
+  }
 };
 
-var player = new Paddle(20, 320, 20, 100);
-var computer = new Paddle(1160, 290, 20, 100);
 var ball = new Ball(600, 360, 10, (0*Math.PI), (2*Math.PI));
