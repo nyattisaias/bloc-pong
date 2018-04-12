@@ -33,13 +33,13 @@ Ball.prototype.move = function() {
   ) {
     this.speedX = -this.speedX;
   }
-  if (this.xPos > computer.xPos + computer.width) {
-    canvas.width = canvas.width; //resets canvas
+  if (didPlayerScore()) {
+    updateScore();
     this.xPos = 600;
     this.yPos = 360;
   }
-  if (this.xPos < player.xPos - player.width) {
-    canvas.width = canvas.width; //resets canvas
+  if (didComputerScore()) {
+    updateScore();
     this.xPos = 600;
     this.yPos = 360;
   }

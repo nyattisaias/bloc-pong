@@ -34,5 +34,14 @@ Paddle.prototype.update = function() {
   canvas.width = canvas.width; //resets canvas
 };
 
+// disable page scrolling when keyboard is pressed
+window.addEventListener("keydown", function(e) {
+    // space, page up, page down and arrow keys:
+    if([32, 33, 34, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+
+
 var player = new Paddle(20, 320, 20, 100);
 var computer = new Paddle(1160, 290, 20, 100);

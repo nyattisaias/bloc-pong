@@ -17,3 +17,15 @@ button {
   margin: auto;
   display: block;
 }
+
+#player-score {
+  text-align: left;
+  float: left;
+  margin-left: 15em;
+}
+
+#computer-score {
+  text-align: right;
+  float: right;
+  margin-right: 15em;
+}
