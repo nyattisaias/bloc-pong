@@ -18,13 +18,15 @@ var updateScore = function() {
   }
 
   if (playerScore.innerHTML == 11) {
-    // allows score to change before ending game
-    setTimeout(function() {alert("great you won");}, 0);
+    document.getElementById('win-message').removeAttribute('hidden');
+    // allows score to change and message to display before alerting
+    setTimeout(function() { alert('Game will restart when you select "OK"'); }, 20);
     location.reload();
   }
 
   if (computerScore.innerHTML == 11) {
-    setTimeout(function() {alert("hah you lost");}, 0);
+    document.getElementById('loss-message').removeAttribute('hidden');
+    setTimeout(function() { alert('Game will restart when you select "OK"'); }, 20);
     location.reload();
   }
 };
