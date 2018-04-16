@@ -29,7 +29,7 @@ Paddle.prototype.update = function() {
   if ((computer.yPos !== 0 && computer.yPos > 0) ||
   (computer.yPos !== (canvas.height - this.height) &&
   computer.yPos < canvas.height - this.height)) {
-    this.yPos = (0.85 * ball.yPos + 0.2 * this.height);
+    this.yPos = (0.7 * ball.yPos + 0.2 * this.height);
   }
   canvas.width = canvas.width; //resets canvas
 };

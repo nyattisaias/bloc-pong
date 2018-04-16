@@ -16,4 +16,15 @@ var updateScore = function() {
   if (didComputerScore()) {
     computerScore.innerHTML = Number(computerScore.innerHTML) + 1;
   }
+
+  if (playerScore.innerHTML == 11) {
+    // allows score to change before ending game
+    setTimeout(function() {alert("great you won");}, 0);
+    location.reload();
+  }
+
+  if (computerScore.innerHTML == 11) {
+    setTimeout(function() {alert("hah you lost");}, 0);
+    location.reload();
+  }
 };

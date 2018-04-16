@@ -17,7 +17,7 @@ Ball.prototype.render = function() {
 
 Ball.prototype.move = function() {
   this.yPos += this.speedY;
-  this.xPos += this.speedX;
+  this.xPos -= this.speedX;
   if ((this.yPos - this.radius) === 0 || (this.yPos + this.radius) === canvas.height) {
     this.speedY = -this.speedY;
   }
