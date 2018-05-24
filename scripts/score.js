@@ -6,15 +6,20 @@ var didPlayerScore = function() {
 };
 
 var didComputerScore = function() {
-  return (ball.xPos - ball.radius < player.xPos - player.width);
+  return (ball.xPos + ball.radius < player.xPos - player.width);
 };
 
 var updateScore = function() {
   if (didPlayerScore()) {
     playerScore.innerHTML = Number(playerScore.innerHTML) + 1;
+    stopAnimation = true;
+    // allows continuation of animation after each point
+    //setTimeout(function() { stop = false}, 1);
   }
   if (didComputerScore()) {
     computerScore.innerHTML = Number(computerScore.innerHTML) + 1;
+    stopAnimation = true;
+    //setTimeout(function() { stop = false}, 1);
   }
 
   if (playerScore.innerHTML == 11) {
